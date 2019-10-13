@@ -1,0 +1,340 @@
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+<!doctype html>
+<title>Sign Up</title>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style type="text/css"> 
+    * {
+        margin: 0;
+        padding: 0;
+   }
+  body {
+    margin: 0 auto;
+    background-color:lightgray;
+  }
+  #wrapper {
+        width: 960px;
+        margin: 0 auto;
+   }
+  #header_wrap {
+        width: 100%;
+        height: 201px;
+   }
+  #header {
+      height: 0px;
+      background-size: cover;
+  }
+   .top-nav {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: white;
+   }  
+
+   .cool-link {
+       display: inline-block;
+       color: #000;
+       text-decoration: none;
+   }
+
+   .cool-link:after {
+       content: '';
+       display: block;
+       width: 0;
+       height: 2px;
+       background: #000;
+       transition: width .3s;
+   }
+
+   .cool-link:hover::after {
+       width:100%;
+   }
+
+   .nav {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: 875px;
+    
+  }
+  .nav ul {
+    display: inline-block;
+    margin: 0 0 0 35px;
+    padding: 20px 0 16px;
+    list-style: none;
+    
+  }
+  .nav ul li {
+    display:inline-block;
+    margin: 0 15px 0 19px;
+    padding: 0;
+    float: left;
+  }
+
+  .nav ul li a {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-family:italic;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+  }
+    #body-container {
+      width:100%;
+      height: auto;
+      margin: 0px;
+      padding: 20px 0;
+      overflow: hidden;
+    }
+  
+  h1 {
+    color: crimson;
+    font-size: 60px;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+  #main-Content {
+        width: 960px;
+        margin: 0 auto;
+        padding: 0px;
+  } 
+  .tagline {
+    width: 960px;
+    height: 67px;
+    margin: 0px;
+    padding: 0px;
+  }
+  .banner {
+    width: 960px;
+    height: 400px;
+    margin: 0px;
+    padding: 0px;
+  }
+  .slider {
+    width: 930px;
+    height: 370px;
+    border: 1px solid #000;
+  }
+  .Blog {
+      width: 960px;
+      height: 117px;
+    }
+    .blog p span {
+      margin: 10px 0 0 20px;
+      padding: 10px 0 0 0;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:24px;
+      font-weight:bold;
+      color: gold;
+    }
+    .blog p {
+      margin: 0;
+      padding: 0 4px 0 0;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:14px;
+      color:#fff;
+      font-weight:normal;
+    }
+      #mainWrapper {
+      width: 930px;
+      margin: 10px auto;
+    }
+
+      #leftcol {
+        width: 600px;
+        float: left;
+        margin-bottom: 10px;
+  
+    }
+    .block {
+      width: 540px;
+      height: 260px;
+      margin: 10px;
+    }
+    .code {
+      width: 540px;
+      height: 240px;
+      border: 1px solid #000;
+      margin: 10px;
+    }
+     #rightcol {
+      width: 300px;
+  
+      float: right;
+    }
+    p {
+      width: 960px;
+      margin: 0 auto;
+      font-family: Monotype Corsiva;
+      font-style: italic;
+    }
+   
+     a.a {
+      color: crimson;
+    }
+
+    a.a:hover {
+      color: darkorange;
+    }
+
+    a.b {
+      color: grey;
+    }
+
+    a.b:hover {
+      color: darkorange;
+    }
+
+    p {
+      color: black;
+    }
+
+    p:hover {
+      color: white;
+    }
+
+    p.a:hover {
+      color: crimson;
+    }
+
+    h3 {
+      color: burlywood;
+    }
+
+    h3:hover {
+      color: gold;
+    }
+       
+    .footer {
+      display:inline-block;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      background-color: white;
+    }
+    .footer-nav {
+      display: block;
+      margin: 0 auto;
+      padding: 0 0 0 70px;
+      width: 625px;
+    }
+    .footer-nav ul {
+        display: inline-block;
+        margin: 0;
+        padding: 15px 0;
+    }
+    .footer-nav ul li  {
+        display: inline-block;
+        margin: 0;
+        padding: 0 10px;
+        float: left;
+        border-right: 2px solid #fff;
+        line-height: 15px;
+    }
+    .footer-nav ul li a {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      font-family:italic;
+      font-size:15px;
+      text-transform: uppercase;
+      color:black;
+      font-weight: normal;
+      text-decoration:underline;
+    }
+    .footer-nav ul li a:hover {
+      text-decoration: none;
+    }
+    .footer-nav .no-border {
+      border: none;
+    }
+   
+    
+
+</style>
+
+</head>
+
+<body>
+
+          <div id="header_wrap">
+        <div id ="header"></div>
+
+     </div>
+     <!--nav-->
+        <div class ="top-nav">
+               <nav class="nav">
+                               <ul>
+                                <li><a class="cool-link" href="{% url 'home' %}">Home</a></li>
+                                <li><a class="cool-link" href="">About</a></li>
+                                <li><a class="cool-link" href="">GALLERY</a></li>
+                                <li><a class="cool=link" href="{% url 'login' %}">Log In</a></li>
+                                <li><a class="cool-link" href="{% url 'signup' %}">Sign Up</a></li>
+                                <li><a class="cool-link" href="mailto:ebisumark23@gmail.com">Contact</a></li>
+                               </ul>
+                            </nav>
+                       </div>
+              <!--nav end-->
+
+
+
+<h2 align="center">Sign Up</h2>
+ <center><form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+ <button class="btn btn-warning" type="submit">Sign Up</button></center>
+</form>
+
+
+     </div>
+    </div>
+    </div>
+    </div>
+
+ <!--footer-->
+         <footer class="footer">
+ <div class="footer-nav">
+  <ul>
+    <p class="a">copyright @2020 | Created by: <a class="a">Mark Ebisu</a><a class="b"> Hover Effectz</a></p>
+  </ul>
+  <div class="clear"></div>
+ 
+
+</body>
+</div>
+</html>
+
+
+
+
+ 
+
+
+
+
+
+
+  
+
+
+
+ 
+
+
+
+
+
